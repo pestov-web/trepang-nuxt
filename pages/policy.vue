@@ -1,7 +1,9 @@
 <script lang="ts" setup></script>
 
 <template>
-  <section>Page: about</section>
+  <div>
+    Page: policy
+  </div>
 </template>
 
 <style scoped></style>

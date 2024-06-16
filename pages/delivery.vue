@@ -1,9 +1,7 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div>
-    Component: Slider
-  </div>
+  <section>Page: delivery</section>
 </template>
 
 <style scoped></style>

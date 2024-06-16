@@ -29,4 +29,7 @@ body {
 main {
   min-height: 60vh;
 }
+section {
+  @apply flex flex-col mt-5 mx-auto overflow-hidden p-0 max-w-screen-xl rounded-xl border shadow-2xl bg-white;
+}
 </style>

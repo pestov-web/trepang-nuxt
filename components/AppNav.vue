@@ -3,6 +3,7 @@ const navMenu = [
   { name: "Главная", link: "/" },
   { name: "Трепанг", link: "/trepang" },
   { name: "О нас", link: "/about" },
+  { name: "Документы", link: "/docs" },
   { name: "Доставка", link: "/delivery" },
 ];
 </script>
