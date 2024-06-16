@@ -75,12 +75,26 @@ const cardList = [
     ],
   },
 ];
+
+const carouselRef = ref();
+
+onMounted(() => {
+  setInterval(() => {
+    if (!carouselRef.value) return;
+
+    if (carouselRef.value.page === carouselRef.value.pages) {
+      return carouselRef.value.select(0);
+    }
+
+    carouselRef.value.next();
+  }, 3000);
+});
 </script>
 
 <template>
   <ul class="grid grid-cols-2 gap-5 mt-4">
     <li
-      class="p-4 rounded-2xl overflow-hidden shadow-2xl bg-white transition-all hover:scale-102"
+      class="p-4 rounded-2xl overflow-hidden shadow-xl bg-white transition-all hover:shadow-2xl"
       v-for="card in cardList"
       :key="card.id"
     >

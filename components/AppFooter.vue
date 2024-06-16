@@ -60,7 +60,7 @@ const isOpen = ref(false);
           color="primary"
           label="Button"
           :trailing="false"
-          to="dfa"
+          to="/"
           @click="isOpen = true"
         >
           Напишите нам на WhatsApp

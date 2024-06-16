@@ -10,10 +10,14 @@
 </template>
 
 <style lang="scss">
+// turning off dark mode
+html {
+  color-scheme: light !important;
+}
+
 body {
   position: relative;
   z-index: 1;
-
   &::before {
     content: "";
     position: absolute;
