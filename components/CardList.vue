@@ -41,9 +41,10 @@ const cardList = [
     slug: "trepang-v-kapsulah",
     images: [
       "/images/goods/dp2.webp",
-      "/images/goods/dp2.webp",
-      "/images/goods/dp3.webp",
-      "/images/goods/dp4.webp",
+      "/images/goods/dp2-2.webp",
+      "/images/goods/dp2-3.webp",
+      "/images/goods/dp2-4.webp",
+      "/images/goods/dp2-5.webp",
     ],
   },
   {
@@ -59,7 +60,13 @@ const cardList = [
     price: 2200,
     discount: 30, // в процентах
     slug: "trepang-extract",
-    images: ["/images/goods/dp3.webp"],
+    images: [
+      "/images/goods/dp3.webp",
+      "/images/goods/dp3-2.webp",
+      "/images/goods/dp3-3.webp",
+      "/images/goods/dp3-4.webp",
+      "/images/goods/dp3-5.webp",
+    ],
   },
   {
     id: 4,
