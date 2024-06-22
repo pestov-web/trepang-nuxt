@@ -6,12 +6,17 @@ const cardList = [
     description:
       "Биологическая активная добавка к пище ферментативный гидролизат трепанга в желатиновых капсулах (сушенный трепанг в капсулах). Изготовлена в соответствии с документами: СТО 0147061768-001-2022",
     list: [
-      "Очень эффективен при мужской половой слабости",
-      "Усиливает либидо у женщин",
+      "Повышение жизненного тонуса ",
+      "Ускоренное обновление тканей",
+      "Восстановление функции половых желез",
+      "Быстрое излечение от ОРЗ и ОРВИ",
+      "Улучшенная работа желудка",
+      "Порядок в сердечно-сосудистой системе",
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
-    price: 2500,
+    price: 3500,
+    discount: 15, // в процентах
     slug: "trepang-na-medu",
     images: [
       "/images/goods/dp1.webp",
@@ -31,7 +36,8 @@ const cardList = [
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/197867104/detail.aspx?targetUrl=MS&size=320734553",
-    price: 4300,
+    price: 5300,
+    discount: 25, // в процентах
     slug: "trepang-v-kapsulah",
     images: [
       "/images/goods/dp2.webp",
@@ -50,7 +56,8 @@ const cardList = [
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
-    price: 1200,
+    price: 2200,
+    discount: 30, // в процентах
     slug: "trepang-extract",
     images: ["/images/goods/dp3.webp"],
   },
@@ -62,7 +69,8 @@ const cardList = [
       "Очень эффективен при мужской половой слабости",
       "Усиливает либидо у женщин",
     ],
-    price: 2300,
+    price: 3300,
+    discount: 5, // в процентах
     wbUrl:
       "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
     slug: "ikra-morskogo-jeza",
@@ -89,47 +97,53 @@ onMounted(() => {
     carouselRef.value.next();
   }, 3000);
 });
+
+const variant = 1;
 </script>
 
 <template>
-  <ul class="grid grid-cols-2 gap-5 mt-4">
+  <ul class="grid grid-cols-4 gap-5 pt-4">
     <li
-      class="p-4 rounded-2xl overflow-hidden shadow-xl bg-white transition-all hover:shadow-2xl"
       v-for="card in cardList"
       :key="card.id"
+      class="flex flex-col gap-2 rounded-2xl overflow-hidden shadow-xl bg-white transition-all hover:shadow-2xl pb-2"
     >
-      <h3 class="text-xl pb-2">{{ card.name }}</h3>
-      <!-- <UDivider /> -->
-      <div class="grid grid-cols-3 gap-2 cursor-pointer">
-        <UCarousel
-          v-slot="{ item }"
-          :items="card.images"
-          :ui="{ item: 'snap-start' }"
-        >
-          <img :src="item" width="180" height="250" draggable="false" />
-        </UCarousel>
-        <!-- <NuxtImg :src="card.images[0]" alt="image" class="w-full h-full" /> -->
-        <p class="col-span-2">{{ card.description }}</p>
-      </div>
-      <UDivider class="py-4" />
-      <div class="grid grid-cols-3 pt-2">
-        <p class="col-span-1">{{ card.price + " ₽" }}</p>
-        <div class="flex flex-col gap-2 col-span-2">
-          <UButton
-            :to="card.wbUrl"
-            target="_blank"
-            class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all hover:scale-105"
-            block
-            >Купить на Wildberries</UButton
+      <UCarousel
+        v-slot="{ item }"
+        :items="card.images"
+        :ui="{
+          item: 'snap-start overflow-hidden shadow-xl',
+        }"
+      >
+        <img :src="item" width="294" height="240" draggable="false" />
+      </UCarousel>
+      <div class="flex justify-between p-2">
+        <div class="flex gap-2 justify-center items-center">
+          <span class="text-2xl"
+            >{{ card.price - (card.price / 100) * card.discount }} ₽</span
           >
-          <UDivider label="или" />
-          <UButton class="transition-all hover:scale-105" block
-            >Заказать на сайте</UButton
-          >
+          <span class="line-through">{{ card.price + " ₽" }} </span>
         </div>
+        <UBadge color="red" variant="solid">-{{ card.discount }}%</UBadge>
+      </div>
+      <h2 class="px-2">{{ card.name }}</h2>
+      <div class="flex flex-col gap-2 col-span-2 p-2">
+        <UButton
+          :to="card.wbUrl"
+          target="_blank"
+          class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700"
+          block
+          >Купить на Wildberries</UButton
+        >
+        <UDivider label="или" />
+        <UButton class="transition-all" block>Заказать на сайте</UButton>
       </div>
     </li>
   </ul>
 </template>
 
-<style scoped></style>
+<style scoped>
+.decor {
+  text-decoration: none;
+}
+</style>
