@@ -42,30 +42,7 @@ const isOpen = ref(false);
           >Политика обработки персональных данных</NuxtLink
         >
       </div>
-      <div class="flex flex-col justify-around items-end">
-        <UButton
-          icon="material-symbols:call"
-          size="md"
-          color="primary"
-          variant="soft"
-          label="Button"
-          :trailing="false"
-          @click="isOpen = true"
-          >Заказажите обратный звонок</UButton
-        >
-
-        <UButton
-          icon="simple-icons:whatsapp"
-          size="md"
-          color="primary"
-          label="Button"
-          :trailing="false"
-          to="/"
-          @click="isOpen = true"
-        >
-          Напишите нам на WhatsApp
-        </UButton>
-      </div>
+      <div class="flex flex-col justify-around items-end"></div>
       <!-- <ul class="footer__social">
         <li class="footer__social-item">
           <NuxtLink to="/">

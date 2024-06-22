@@ -2,7 +2,8 @@
 // @ts-ignore
 import { object, string, type InferType } from "yup";
 import type { FormSubmitEvent } from "#ui/types";
-const phoneRegExp = /(^8|7|\+7)((\d{10})|(\s\(\d{3}\)\s\d{3}\s\d{2}\s\d{2}))/;
+const phoneRegExp =
+  /^(\+7|8)?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
 
 const schema = object({
   name: string().required("Необходимо ввести имя"),

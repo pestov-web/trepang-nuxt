@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import { object, string, type InferType } from "yup";
+// @ts-ignore
+import type { FormSubmitEvent } from "#ui/types";
 const cardList = [
   {
     id: 1,
@@ -105,7 +108,39 @@ onMounted(() => {
   }, 3000);
 });
 
-const variant = 1;
+const phoneRegExp =
+  /^(\+7|8)?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
+
+const schema = object({
+  name: string().required("Необходимо ввести имя"),
+  telephone: string()
+    .matches(phoneRegExp, "Неверный формат номера")
+    .required("Необходимо ввести номер телефона"),
+});
+
+type Schema = InferType<typeof schema>;
+
+const state = reactive({
+  name: undefined,
+  telephone: undefined,
+  order: undefined,
+});
+const order = reactive({
+  name: "",
+  price: 0,
+});
+
+async function onSubmit(event: FormSubmitEvent<Schema>) {
+  // Do something with event.data
+  console.log(event.data);
+}
+
+const isOpen = ref(false);
+const handleBuy = (item: string, price: number) => {
+  isOpen.value = true;
+  order.name = item;
+  order.price = price;
+};
 </script>
 
 <template>
@@ -143,10 +178,42 @@ const variant = 1;
           >Купить на Wildberries</UButton
         >
         <UDivider label="или" />
-        <UButton class="transition-all" block>Заказать на сайте</UButton>
+        <ClientOnly>
+          <UButton
+            class="transition-all"
+            block
+            @click="handleBuy(card.name, card.price)"
+          >
+            Заказать на сайте</UButton
+          ></ClientOnly
+        >
       </div>
     </li>
   </ul>
+  <UModal v-model="isOpen">
+    <div class="p-4">
+      <UForm
+        :schema="schema"
+        :state="state"
+        class="space-y-4"
+        @submit="onSubmit"
+      >
+        <h3>
+          Вы хотите заказать <span class="font-bold">{{ order.name }} </span>
+        </h3>
+        <p>Подтвердите заказ и с вами свяжется наш менеджер</p>
+        <UFormGroup label="Ваше Имя" name="name">
+          <UInput v-model="state.name" />
+        </UFormGroup>
+
+        <UFormGroup label="Ваш Телефон" name="telephone">
+          <UInput v-model="state.telephone" type="telephone" />
+        </UFormGroup>
+
+        <UButton type="submit">Подтвердить заказ</UButton>
+      </UForm>
+    </div>
+  </UModal>
 </template>
 
 <style scoped>
