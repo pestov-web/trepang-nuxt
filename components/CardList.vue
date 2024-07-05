@@ -59,7 +59,7 @@ const cardList = [
       "Усиливает либидо у женщин",
     ],
     wbUrl:
-      "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
+      "https://www.wildberries.ru/catalog/229794574/detail.aspx?targetUrl=MS",
     price: 2200,
     discount: 30, // в процентах
     slug: "trepang-extract",
@@ -82,7 +82,7 @@ const cardList = [
     price: 3300,
     discount: 5, // в процентах
     wbUrl:
-      "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
+      "https://www.wildberries.ru/catalog/235761419/detail.aspx?targetUrl=MS",
     slug: "ikra-morskogo-jeza",
     images: [
       "/images/goods/dp4.webp",
