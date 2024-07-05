@@ -123,23 +123,20 @@ type Schema = InferType<typeof schema>;
 const state = reactive({
   name: undefined,
   telephone: undefined,
-  order: undefined,
-});
-const order = reactive({
-  name: "",
-  price: 0,
+  goods: "",
 });
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  // Do something with event.data
-  console.log(event.data);
+  loading.value = true;
+  await useSendMail(event.data);
+  loading.value = false;
+  isOpen.value = false;
 }
-
+const loading = ref(false);
 const isOpen = ref(false);
-const handleBuy = (item: string, price: number) => {
+const handleBuy = (item: string) => {
   isOpen.value = true;
-  order.name = item;
-  order.price = price;
+  state.goods = item;
 };
 </script>
 
@@ -179,11 +176,7 @@ const handleBuy = (item: string, price: number) => {
         >
         <UDivider label="или" />
         <ClientOnly>
-          <UButton
-            class="transition-all"
-            block
-            @click="handleBuy(card.name, card.price)"
-          >
+          <UButton class="transition-all" block @click="handleBuy(card.name)">
             Заказать на сайте</UButton
           ></ClientOnly
         >
@@ -199,7 +192,7 @@ const handleBuy = (item: string, price: number) => {
         @submit="onSubmit"
       >
         <h3>
-          Вы хотите заказать <span class="font-bold">{{ order.name }} </span>
+          Хотите заказать <span class="font-bold">{{ state.goods }} ?</span>
         </h3>
         <p>Подтвердите заказ и с вами свяжется наш менеджер</p>
         <UFormGroup label="Ваше Имя" name="name">
@@ -210,7 +203,7 @@ const handleBuy = (item: string, price: number) => {
           <UInput v-model="state.telephone" type="telephone" />
         </UFormGroup>
 
-        <UButton type="submit">Подтвердить заказ</UButton>
+        <UButton :loading="loading" type="submit">Подтвердить заказ</UButton>
       </UForm>
     </div>
   </UModal>

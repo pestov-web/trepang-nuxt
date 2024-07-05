@@ -20,11 +20,13 @@ const state = reactive({
 });
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
-  // Do something with event.data
-  console.log(event.data);
+  loading.value = true;
+  await useSendMail(event.data);
+  loading.value = false;
+  isOpen.value = false;
 }
-
 const isOpen = ref(false);
+const loading = ref(false);
 </script>
 
 <template>
@@ -64,7 +66,9 @@ const isOpen = ref(false);
                 <UInput v-model="state.telephone" type="telephone" />
               </UFormGroup>
 
-              <UButton type="submit">Заказать звонок</UButton>
+              <UButton :loading="loading" type="submit"
+                >Заказать звонок</UButton
+              >
             </UForm>
           </div>
         </UModal>

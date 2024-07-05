@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const img = useImage();
 const sliderDocs = [
   {
     id: 1,
@@ -87,9 +88,14 @@ onMounted(() => {
         <li
           v-for="doc in sliderDocs"
           :key="doc.id"
-          class="rounded-2xl shadow-xl overflow-hidden"
+          class="rounded-2xl shadow-xl overflow-hidden max-w-[400px] max-h-[600px] transition-all hover:shadow-2xl"
         >
-          <NuxtImg :src="doc.src" alt="Документ" />
+          <NuxtImg
+            :src="doc.src"
+            :alt="doc.alt"
+            fit="fill"
+            :placeholder="img(doc.src, { h: 565, f: 'webp', blur: 2, q: 50 })"
+          />
         </li>
       </ul>
     </div>

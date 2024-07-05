@@ -12,28 +12,42 @@ export default defineNuxtConfig({
     "nuxt-headlessui",
     "nuxt-icon",
     "@nuxt/ui",
-    // "nuxt-swiper",
-    "vue3-carousel-nuxt",
-    "nuxt-mail",
+    "nuxt-nodemailer",
   ],
-
-  // swiper: {
-  //   prefix: "Swiper",
-  //   styleLang: "css",
-  //   modules: ["navigation", "pagination", "autoplay", "effect-creative"], // all modules are imported by default
-  // },
-  // tailwindcss: {
-  //   cssPath: "~/assets/css/tailwind.css",
-  // },
-  mail: {
-    message: {
-      to: "foo@bar.de",
-    },
-    smtp: {
-      host: "smtp.example.com",
-      port: 587,
+  // @ts-ignore
+  image: {
+    // The screen sizes predefined by `@nuxt/image`:
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+      "2xl": 1536,
     },
   },
-
+  googleFonts: {
+    families: {
+      Roboto: true,
+      "Josefin+Sans": true,
+      Lato: [100, 300],
+      Inter: "200..700",
+      "Crimson Pro": {
+        wght: "200..900",
+        ital: "200..700",
+      },
+    },
+  },
+  nodemailer: {
+    from: "Трепанг Онлайн <trepang.online@gmail.com>",
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: "trepang.online@gmail.com",
+      pass: "idqe dlsi ngaa fixc",
+    },
+  },
   compatibilityDate: "2024-07-05",
 });
