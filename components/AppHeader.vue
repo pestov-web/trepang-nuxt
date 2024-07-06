@@ -40,7 +40,7 @@ const loading = ref(false);
         <div
           class="flex items-center gap-3 justify-center cursor-pointer transition-all hover:scale-105"
         >
-          <Icon name="material-symbols:call" color="black" class="text-xl" />
+          <Icon name="logos:whatsapp-icon" color="black" class="text-3xl" />
           <span @click="isOpen = true" class="text-xl font-bold"
             >+7 902 055 55 52</span
           >
