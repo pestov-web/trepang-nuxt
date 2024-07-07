@@ -26,13 +26,16 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   isOpen.value = false;
 }
 const isOpen = ref(false);
+const isSlideOverOpen = ref(false);
 const loading = ref(false);
+
+const navMenu = useNavList();
 </script>
 
 <template>
   <header class="flex items-center justify-center">
     <div
-      class="flex max-w-screen-xl w-full h-20 lg:h-28 items-center justify-between shadow-xl rounded-b-xl bg-white px-5"
+      class="flex max-w-screen-xl w-full h-14 md:h-20 lg:h-28 items-center justify-between shadow-xl xl:rounded-b-xl bg-white px-5"
     >
       <AppLogo />
       <AppNav class="hidden md:flex" />
@@ -40,6 +43,7 @@ const loading = ref(false);
         <NuxtLink
           to="https://api.whatsapp.com/send/?phone=79020555552&text&type=phone_number&app_absent=0"
           class="flex items-center gap-3 justify-center cursor-pointer transition-all hover:scale-105"
+          target="_blank"
         >
           <Icon name="logos:whatsapp-icon" color="black" class="text-3xl" />
           <span @click="isOpen = true" class="text-xl font-bold hidden lg:block"
@@ -47,12 +51,22 @@ const loading = ref(false);
           >
         </NuxtLink>
 
-        <UButton label="CallBack" @click="isOpen = true"
+        <UButton class="hidden md:block" label="CallBack" @click="isOpen = true"
           >Заказать звонок</UButton
         >
+        <UButton
+          class="md:hidden"
+          variant="ghost"
+          label="Menu"
+          @click="isSlideOverOpen = true"
+          ><Icon
+            name="material-symbols:menu-rounded"
+            color="black"
+            class="text-3xl"
+        /></UButton>
       </div>
     </div>
-    <UModal v-model="isOpen">
+    <UModal v-model="isOpen" :ui="{ container: 'items-start' }">
       <div class="p-4">
         <UForm
           :schema="schema"
@@ -72,5 +86,33 @@ const loading = ref(false);
         </UForm>
       </div>
     </UModal>
+    <USlideover v-model="isSlideOverOpen">
+      <div class="p-4 flex-1 flex flex-col items-center gap-4">
+        <UButton
+          color="gray"
+          variant="ghost"
+          size="xl"
+          icon="i-heroicons-x-mark-20-solid"
+          class="flex sm:hidden absolute end-5 top-5 z-10"
+          square
+          padded
+          @click="isSlideOverOpen = false"
+        />
+        <ul class="flex flex-col gap-4 pt-6">
+          <li v-for="item in navMenu" :key="item.name">
+            <NuxtLink
+              class="flex items-center gap-3 justify-center cursor-pointer transition-all hover:scale-105"
+              :to="item.link"
+              @click="isSlideOverOpen = false"
+            >
+              {{ item.name }}
+            </NuxtLink>
+          </li>
+        </ul>
+        <UButton class="block" label="CallBack" @click="isOpen = true"
+          >Заказать звонок</UButton
+        >
+      </div>
+    </USlideover>
   </header>
 </template>

@@ -39,6 +39,6 @@ main {
 }
 section {
   @apply flex flex-col mt-5 overflow-hidden p-0
-    max-w-screen-xl rounded-xl border shadow-2xl bg-white;
+    max-w-screen-xl xl:rounded-xl border shadow-2xl bg-white;
 }
 </style>

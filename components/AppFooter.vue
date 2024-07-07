@@ -28,7 +28,7 @@ const isOpen = ref(false);
 <template>
   <footer class="mt-5">
     <div
-      class="h-full p-7 max-w-screen-xl mx-auto grid grid-cols-2 justify-between border shadow-xl rounded-t-xl bg-white"
+      class="h-full p-7 max-w-screen-xl mx-auto grid grid-cols-2 justify-between border shadow-xl xl:rounded-t-xl bg-white"
     >
       <div class="flex flex-col gap-2">
         <p>
