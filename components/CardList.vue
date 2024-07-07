@@ -95,9 +95,13 @@ const { data, error } = (await useAsyncData("goods", () =>
             }}
             ₽</span
           >
-          <span class="line-through">{{ card.price + " ₽" }} </span>
+          <span v-if="card.discount > 0" class="line-through"
+            >{{ card.price + " ₽" }}
+          </span>
         </div>
-        <UBadge color="red" variant="solid">-{{ card.discount }}%</UBadge>
+        <UBadge v-if="card.discount > 0" color="red" variant="solid"
+          >-{{ card.discount }}%</UBadge
+        >
       </div>
       <h2 class="px-2">{{ card.name }}</h2>
       <div class="flex flex-col gap-2 col-span-2 p-2">

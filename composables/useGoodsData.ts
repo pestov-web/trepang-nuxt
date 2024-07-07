@@ -88,6 +88,21 @@ const goodsList = [
       "/images/goods/dp4-5.webp",
     ],
   },
+  {
+    id: 5,
+    name: "Трепанг сушеный",
+    description: "Описание трепанга",
+    list: [
+      "Очень эффективен при мужской половой слабости",
+      "Усиливает либидо у женщин",
+    ],
+    price: 30500,
+    discount: 0, // в процентах
+    wbUrl:
+      "https://www.wildberries.ru/catalog/242830143/detail.aspx?targetUrl=GP",
+    slug: "trepang-sushenyu",
+    images: ["/images/goods/dp5.webp", "/images/goods/dp5-2.webp"],
+  },
 ];
 
 export const useGoodsData = (slug?: string) => {
