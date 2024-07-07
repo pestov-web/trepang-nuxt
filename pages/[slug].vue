@@ -21,7 +21,7 @@ const currentImage = ref("");
 </script>
 
 <template>
-  <section class="py-2">
+  <section class="py-2 w-full">
     <UButton class="max-w-fit m-4">Назад</UButton>
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row -mx-4">
@@ -55,11 +55,7 @@ const currentImage = ref("");
               >
             </div>
             <div class="w-1/2 px-2">
-              <button
-                class="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600"
-              >
-                Add to Wishlist
-              </button>
+              <UButton class="transition-all" block> Заказать на сайте</UButton>
             </div>
           </div>
         </div>
@@ -81,13 +77,13 @@ const currentImage = ref("");
             </div>
             <div>
               <span class="font-bold text-gray-700 dark:text-gray-300">:</span>
-              <span class="text-gray-600 dark:text-gray-300">In Stock</span>
+              <span class="text-gray-600 dark:text-gray-300">Скидка</span>
             </div>
           </div>
 
           <div>
             <span class="font-bold text-gray-700 dark:text-gray-300"
-              >Product Description:</span
+              >Описание:</span
             >
             <p class="text-gray-600 dark:text-gray-300 text-sm mt-2">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sed
