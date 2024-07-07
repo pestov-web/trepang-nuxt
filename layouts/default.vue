@@ -36,7 +36,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 8px;
 }
 section {
   @apply flex flex-col mt-5 overflow-hidden p-0

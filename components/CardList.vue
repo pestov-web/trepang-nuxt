@@ -2,7 +2,7 @@
 import { object, string, type InferType } from "yup";
 // @ts-ignore
 import type { FormSubmitEvent } from "#ui/types";
-
+import { onMounted, ref, reactive } from "vue";
 const carouselRef = ref();
 
 onMounted(() => {
@@ -73,16 +73,20 @@ const { data, error } = (await useAsyncData("goods", () =>
       :key="card.id"
       class="flex flex-col gap-2 rounded-2xl overflow-hidden shadow-xl bg-white transition-all hover:shadow-2xl pb-2"
     >
-      <NuxtLink :to="card.slug">
-        <UCarousel
-          v-slot="{ item }"
-          :items="card.images"
-          :ui="{
-            item: 'snap-start overflow-hidden shadow-xl max-h-[420px] sm:max-h-[392px] w-full h-full object-cover object-center',
-          }"
-        >
-          <img :src="item" draggable="false" /> </UCarousel
-      ></NuxtLink>
+      <!-- <NuxtLink :to="card.slug"> -->
+
+      <UCarousel
+        ref="carouselRef"
+        v-slot="{ item }"
+        :items="card.images"
+        :ui="{
+          item: 'snap-start overflow-hidden shadow-xl max-h-[420px] sm:max-h-[392px] w-full h-full object-cover object-center',
+        }"
+        indicators
+      >
+        <img :src="item" />
+      </UCarousel>
+      <!-- </NuxtLink> -->
       <div class="flex justify-between p-2">
         <div class="flex gap-2 justify-center items-center">
           <span class="text-2xl"
