@@ -32,16 +32,16 @@ const loading = ref(false);
 <template>
   <header class="flex items-center justify-center">
     <div
-      class="flex max-w-screen-xl w-full h-28 items-center justify-between shadow-xl rounded-b-xl bg-white px-5"
+      class="flex max-w-screen-xl w-full h-20 lg:h-28 items-center justify-between shadow-xl rounded-b-xl bg-white px-5"
     >
       <AppLogo />
-      <AppNav />
+      <AppNav class="hidden md:flex" />
       <div class="flex items-center gap-4">
         <div
           class="flex items-center gap-3 justify-center cursor-pointer transition-all hover:scale-105"
         >
           <Icon name="logos:whatsapp-icon" color="black" class="text-3xl" />
-          <span @click="isOpen = true" class="text-xl font-bold"
+          <span @click="isOpen = true" class="text-xl font-bold hidden lg:block"
             >+7 902 055 55 52</span
           >
         </div>
@@ -49,30 +49,27 @@ const loading = ref(false);
         <UButton label="CallBack" @click="isOpen = true"
           >Заказать звонок</UButton
         >
-
-        <UModal v-model="isOpen">
-          <div class="p-4">
-            <UForm
-              :schema="schema"
-              :state="state"
-              class="space-y-4"
-              @submit="onSubmit"
-            >
-              <UFormGroup label="Ваше Имя" name="name">
-                <UInput v-model="state.name" />
-              </UFormGroup>
-
-              <UFormGroup label="Ваш Телефон" name="telephone">
-                <UInput v-model="state.telephone" type="telephone" />
-              </UFormGroup>
-
-              <UButton :loading="loading" type="submit"
-                >Заказать звонок</UButton
-              >
-            </UForm>
-          </div>
-        </UModal>
       </div>
     </div>
+    <UModal v-model="isOpen">
+      <div class="p-4">
+        <UForm
+          :schema="schema"
+          :state="state"
+          class="space-y-4"
+          @submit="onSubmit"
+        >
+          <UFormGroup label="Ваше Имя" name="name">
+            <UInput v-model="state.name" />
+          </UFormGroup>
+
+          <UFormGroup label="Ваш Телефон" name="telephone">
+            <UInput v-model="state.telephone" type="telephone" />
+          </UFormGroup>
+
+          <UButton :loading="loading" type="submit">Заказать звонок</UButton>
+        </UForm>
+      </div>
+    </UModal>
   </header>
 </template>

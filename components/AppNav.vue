@@ -9,7 +9,7 @@ const navMenu = [
 
 <template>
   <nav>
-    <ul class="flex gap-5 list-none h-7 text-base">
+    <ul class="flex gap-5 list-none h-7 text-sm lg:text-base">
       <li
         v-for="item in navMenu"
         :key="item.name"

@@ -3,8 +3,9 @@
 <template>
   <div>
     <AppHeader />
-    <main><slot /></main>
-
+    <main>
+      <slot />
+    </main>
     <AppFooter />
   </div>
 </template>
@@ -32,8 +33,13 @@ body {
 }
 main {
   min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 8px;
 }
 section {
-  @apply flex flex-col mt-5 mx-auto overflow-hidden p-0 max-w-screen-xl rounded-xl border shadow-2xl bg-white;
+  @apply flex flex-col mt-5 overflow-hidden p-0
+    max-w-screen-xl rounded-xl border shadow-2xl bg-white;
 }
 </style>
