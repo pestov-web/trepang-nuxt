@@ -120,7 +120,7 @@ const { data, error } = (await useAsyncData("goods", () =>
       </div>
     </li>
   </ul>
-  <UModal v-model="isOpen">
+  <UModal v-model="isOpen" :ui="{ container: 'items-start' }">
     <div class="p-4">
       <UForm
         :schema="schema"

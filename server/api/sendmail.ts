@@ -16,7 +16,7 @@ export default defineEventHandler(async (event) => {
       text: `имя: ${body.name} , телефон: ${body.telephone} ,  ${
         body.goods || "Обратный звонок"
       }`,
-      to: "vladimir.kalyuzhin@gmail.com",
+      to: "info@trepang.online",
     });
 
     console.log("Почта отправлена:", result);
