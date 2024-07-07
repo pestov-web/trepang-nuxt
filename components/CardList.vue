@@ -80,11 +80,11 @@ const { data, error } = (await useAsyncData("goods", () =>
         v-slot="{ item }"
         :items="card.images"
         :ui="{
-          item: 'snap-start overflow-hidden shadow-xl max-h-[420px] sm:max-h-[392px] w-full h-full object-cover object-center',
+          item: 'snap-start overflow-hidden shadow-xl max-h-[720px] sm:max-h-[392px] w-full h-full object-cover object-center',
         }"
         indicators
       >
-        <img :src="item" />
+        <img :src="item" class="w-full h-full object-cover object-center" />
       </UCarousel>
       <!-- </NuxtLink> -->
       <div class="flex justify-between p-2">

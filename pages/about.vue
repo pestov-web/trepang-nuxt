@@ -91,15 +91,15 @@ onMounted(() => {
       опт
     </p>
   </section>
-  <section class="px-5 pt-3 pb-5 flex flex-col gap-4">
+  <section class="px-5 pt-3 pb-5 flex flex-col gap-4 w-full">
     <h2 class="text-2xl">Документы</h2>
     <UDivider />
     <div>
-      <ul class="grid grid-cols-3 gap-4">
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <li
           v-for="doc in sliderDocs"
           :key="doc.id"
-          class="rounded-2xl shadow-xl overflow-hidden max-w-[400px] max-h-[600px] transition-all hover:shadow-2xl"
+          class="rounded-2xl shadow-xl overflow-hidden w-full h-full max-w-[400px] max-h-[600px] transition-all hover:shadow-2xl justify-self-center"
         >
           <NuxtImg
             :src="doc.src"

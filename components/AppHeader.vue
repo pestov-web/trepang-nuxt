@@ -109,7 +109,15 @@ const navMenu = useNavList();
             </NuxtLink>
           </li>
         </ul>
-        <UButton class="block" label="CallBack" @click="isOpen = true"
+        <UButton
+          class="block"
+          label="CallBack"
+          @click="
+            () => {
+              isOpen = true;
+              isSlideOverOpen = false;
+            }
+          "
           >Заказать звонок</UButton
         >
       </div>
