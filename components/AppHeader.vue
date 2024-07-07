@@ -37,14 +37,15 @@ const loading = ref(false);
       <AppLogo />
       <AppNav class="hidden md:flex" />
       <div class="flex items-center gap-4">
-        <div
+        <NuxtLink
+          to="https://api.whatsapp.com/send/?phone=79020555552&text&type=phone_number&app_absent=0"
           class="flex items-center gap-3 justify-center cursor-pointer transition-all hover:scale-105"
         >
           <Icon name="logos:whatsapp-icon" color="black" class="text-3xl" />
           <span @click="isOpen = true" class="text-xl font-bold hidden lg:block"
             >+7 902 055 55 52</span
           >
-        </div>
+        </NuxtLink>
 
         <UButton label="CallBack" @click="isOpen = true"
           >Заказать звонок</UButton
