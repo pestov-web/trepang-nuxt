@@ -14,8 +14,8 @@ const goodsList = [
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
-    price: 3500,
-    discount: 15, // в процентах
+    price: 7399,
+    discount: 63, // в процентах
     slug: "trepang-na-medu",
     images: [
       "/images/goods/dp1.webp",
@@ -35,8 +35,8 @@ const goodsList = [
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/197867104/detail.aspx?targetUrl=MS&size=320734553",
-    price: 5300,
-    discount: 25, // в процентах
+    price: 5999,
+    discount: 21, // в процентах
     slug: "trepang-v-kapsulah",
     images: [
       "/images/goods/dp2.webp",
@@ -56,8 +56,8 @@ const goodsList = [
     ],
     wbUrl:
       "https://www.wildberries.ru/catalog/229794574/detail.aspx?targetUrl=MS",
-    price: 2200,
-    discount: 30, // в процентах
+    price: 2700,
+    discount: 50, // в процентах
     slug: "trepang-extract",
     images: [
       "/images/goods/dp3.webp",
@@ -75,8 +75,8 @@ const goodsList = [
       "Очень эффективен при мужской половой слабости",
       "Усиливает либидо у женщин",
     ],
-    price: 3300,
-    discount: 5, // в процентах
+    price: 3899,
+    discount: 35, // в процентах
     wbUrl:
       "https://www.wildberries.ru/catalog/235761419/detail.aspx?targetUrl=MS",
     slug: "ikra-morskogo-jeza",

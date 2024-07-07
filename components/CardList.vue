@@ -90,7 +90,10 @@ const { data, error } = (await useAsyncData("goods", () =>
       <div class="flex justify-between p-2">
         <div class="flex gap-2 justify-center items-center">
           <span class="text-2xl"
-            >{{ card.price - (card.price / 100) * card.discount }} ₽</span
+            >{{
+              Math.trunc(card.price - (card.price / 100) * card.discount)
+            }}
+            ₽</span
           >
           <span class="line-through">{{ card.price + " ₽" }} </span>
         </div>
