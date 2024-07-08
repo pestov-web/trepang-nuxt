@@ -12,8 +12,8 @@ export const useSendMail = async (data: any) => {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
-    const responseData = await response.json();
-    console.log(responseData);
+    // const responseData = await response.json();
+    // console.log(responseData);
   } catch (error) {
     console.error(error);
   }

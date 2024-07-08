@@ -40,13 +40,13 @@ export default defineNuxtConfig({
     },
   },
   nodemailer: {
-    from: "Трепанг Онлайн <trepang.online@gmail.com>",
+    from: process.env.EMAIL_FROM,
     host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
-      user: "trepang.online@gmail.com",
-      pass: "idqe dlsi ngaa fixc",
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   },
   compatibilityDate: "2024-07-05",

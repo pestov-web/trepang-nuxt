@@ -16,11 +16,11 @@ export default defineEventHandler(async (event) => {
       text: `имя: ${body.name} , телефон: ${body.telephone} ,  ${
         body.goods || "Обратный звонок"
       }`,
-      to: "info@trepang.online",
+      to: process.env.EMAIL_TO,
     });
 
-    console.log("Почта отправлена:", result);
-    return { success: true, result };
+    // console.log("Почта отправлена:", result);
+    // return { success: true, result };
   } catch (error) {
     console.error("Ошибка отправки почты:", error);
     return { success: false, error: (error as Error).message };
