@@ -2,8 +2,9 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
 
-    const nodemailerConfig = useRuntimeConfig().nodemailer;
-    console.log("Nodemailer config:", nodemailerConfig);
+    // инфо о конфиге для дебага
+    // const nodemailerConfig = useRuntimeConfig().nodemailer;
+    // console.log("Nodemailer config:", nodemailerConfig);
 
     const { sendMail } = useNodeMailer();
 

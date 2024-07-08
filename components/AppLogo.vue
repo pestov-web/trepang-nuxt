@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/">
+  <NuxtLink to="https://trepang.online/">
     <NuxtImg
       class=""
       src="images/logo.png"
