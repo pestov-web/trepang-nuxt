@@ -3,7 +3,7 @@ export default defineEventHandler(async (event) => {
     const body = await readBody(event);
 
     const nodemailerConfig = useRuntimeConfig().nodemailer;
-    // console.log("Nodemailer config:", nodemailerConfig);
+    console.log("Nodemailer config:", nodemailerConfig);
 
     const { sendMail } = useNodeMailer();
 
@@ -16,11 +16,11 @@ export default defineEventHandler(async (event) => {
       text: `имя: ${body.name} , телефон: ${body.telephone} ,  ${
         body.goods || "Обратный звонок"
       }`,
-      to: process.env.EMAIL_TO,
+      to: process.env.MAIL_TO,
     });
 
-    // console.log("Почта отправлена:", result);
-    // return { success: true, result };
+    console.log("Почта отправлена:", result);
+    return { success: true, result };
   } catch (error) {
     console.error("Ошибка отправки почты:", error);
     return { success: false, error: (error as Error).message };

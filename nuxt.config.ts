@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     },
   },
   nodemailer: {
-    from: process.env.EMAIL_FROM,
+    from: process.env.MAIL_FROM,
     host: "smtp.gmail.com",
     port: 465,
     secure: true,

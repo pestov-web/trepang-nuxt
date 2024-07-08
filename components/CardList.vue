@@ -3,19 +3,19 @@ import { object, string, type InferType } from "yup";
 // @ts-ignore
 import type { FormSubmitEvent } from "#ui/types";
 import { onMounted, ref, reactive } from "vue";
-const carouselRef = ref();
+// const carouselRef = ref();
 
-onMounted(() => {
-  setInterval(() => {
-    if (!carouselRef.value) return;
+// onMounted(() => {
+//   setInterval(() => {
+//     if (!carouselRef.value) return;
 
-    if (carouselRef.value.page === carouselRef.value.pages) {
-      return carouselRef.value.select(0);
-    }
+//     if (carouselRef.value.page === carouselRef.value.pages) {
+//       return carouselRef.value.select(0);
+//     }
 
-    carouselRef.value.next();
-  }, 3000);
-});
+//     carouselRef.value.next();
+//   }, 3000);
+// });
 
 const phoneRegExp =
   /^(\+7|8)?[\s-]?\(?\d{3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/;
@@ -76,7 +76,6 @@ const { data, error } = (await useAsyncData("goods", () =>
       <!-- <NuxtLink :to="card.slug"> -->
 
       <UCarousel
-        ref="carouselRef"
         v-slot="{ item }"
         :items="card.images"
         :ui="{
