@@ -13,7 +13,7 @@ const goodsList = [
       "Порядок в сердечно-сосудистой системе",
     ],
     wbUrl:
-      "https://www.wildberries.ru/catalog/205460593/detail.aspx?targetUrl=MS&size=330205982",
+      "https://www.wildberries.ru/catalog/250511457/detail.aspx?targetUrl=EX",
     price: 7399,
     discount: 63, // в процентах
     slug: "trepang-na-medu",
@@ -55,7 +55,7 @@ const goodsList = [
       "Усиливает либидо у женщин",
     ],
     wbUrl:
-      "https://www.wildberries.ru/catalog/229794574/detail.aspx?targetUrl=MS",
+      "https://www.wildberries.ru/catalog/250540124/detail.aspx?targetUrl=EX",
     price: 2700,
     discount: 50, // в процентах
     slug: "trepang-extract",
@@ -102,6 +102,25 @@ const goodsList = [
       "https://www.wildberries.ru/catalog/242830143/detail.aspx?targetUrl=GP",
     slug: "trepang-sushenyu",
     images: ["/images/goods/dp5.webp", "/images/goods/dp5-2.webp"],
+  },
+  {
+    id: 6,
+    name: "Морской коллаген",
+    description: "Морской коллаген в капсулах 200 штук",
+    list: [
+      "Очень эффективен при мужской половой слабости",
+      "Усиливает либидо у женщин",
+    ],
+    price: 5999,
+    discount: 60, // в процентах
+    wbUrl: "https://www.wildberries.ru/catalog/250076234/detail.aspx",
+    slug: "trepang-sushenyu",
+    images: [
+      "/images/goods/dp6.webp",
+      "/images/goods/dp6-2.webp",
+      "/images/goods/dp6-3.webp",
+      "/images/goods/dp6-4.webp",
+    ],
   },
 ];
 
