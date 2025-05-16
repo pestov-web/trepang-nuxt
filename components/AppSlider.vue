@@ -13,7 +13,7 @@
             class="sm:hidden w-full h-full max-w-7xl object-cover"
         />
         <NuxtLink
-            to="https://www.wildberries.ru/brands/311125909-doktor-pang"
+            to="https://www.ozon.ru/brand/doktor-pang-101215852/?__rr=1"
             target="_blank"
             class="absolute text-white text-xs sm:text-base rounded-lg p-2 sm:p-4 bottom-20 sm:bottom-32 left-1/2 -translate-x-1/2 bg-blue-500 transition-all hover:scale-105"
             >Мы на OZON</NuxtLink
