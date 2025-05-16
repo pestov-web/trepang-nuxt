@@ -5,8 +5,8 @@ const goodsList = [
     description: "",
     list: [],
     wbUrl: "https://www.wildberries.ru/catalog/250511457/detail.aspx",
-    price: 7399,
-    discount: 63, // в процентах
+    price: 2800,
+    discount: 0, // в процентах
     slug: "",
     images: [
       "/images/goods/dp1.webp",
@@ -23,8 +23,8 @@ const goodsList = [
     list: [],
     wbUrl:
       "https://www.wildberries.ru/catalog/256311216/detail.aspx?targetUrl=EX",
-    price: 5999,
-    discount: 21, // в процентах
+    price: 5000,
+    discount: 0, // в процентах
     slug: "",
     images: [
       "/images/goods/dp2.webp",
@@ -42,8 +42,8 @@ const goodsList = [
     list: [],
     wbUrl:
       "https://www.wildberries.ru/catalog/250540124/detail.aspx?targetUrl=EX",
-    price: 2700,
-    discount: 50, // в процентах
+    price: 1200,
+    discount: 0, // в процентах
     slug: "",
     images: [
       "/images/goods/dp3.webp",
@@ -58,8 +58,8 @@ const goodsList = [
     name: "Икра морского ежа",
     description: "",
     list: [],
-    price: 3899,
-    discount: 35, // в процентах
+    price: 2700,
+    discount: 0, // в процентах
     wbUrl:
       "https://www.wildberries.ru/catalog/256315343/detail.aspx?targetUrl=EX",
     slug: "",
@@ -88,8 +88,8 @@ const goodsList = [
     name: "Морской коллаген",
     description: "",
     list: [],
-    price: 5999,
-    discount: 60, // в процентах
+    price: 2200,
+    discount: 0, // в процентах
     wbUrl:
       "https://www.wildberries.ru/catalog/250076234/detail.aspx?targetUrl=EX",
     slug: "",
@@ -105,7 +105,7 @@ const goodsList = [
     name: "Экстракт плоского ежа",
     description: "",
     list: [],
-    price: 3599,
+    price: 2500,
     discount: 0, // в процентах
     wbUrl:
       "https://www.wildberries.ru/catalog/261663755/detail.aspx?targetUrl=EX",
@@ -122,8 +122,8 @@ const goodsList = [
     name: "Медвежья желчь",
     description: "",
     list: [],
-    price: 5999,
-    discount: 55, // в процентах
+    price: 2800,
+    discount: 0, // в процентах
     wbUrl: "https://www.wildberries.ru/catalog/292690610/detail.aspx",
     slug: "",
     images: [
@@ -142,8 +142,8 @@ const goodsList = [
     name: "Ламинария",
     description: "",
     list: [],
-    price: 1499,
-    discount: 63, // в процентах
+    price: 500,
+    discount: 0, // в процентах
     wbUrl: "https://www.wildberries.ru/catalog/296801682/detail.aspx",
     slug: "",
     images: [
@@ -161,8 +161,8 @@ const goodsList = [
     name: "Восстановление печени",
     description: "",
     list: [],
-    price: 4990,
-    discount: 51, // в процентах
+    price: 2500,
+    discount: 0, // в процентах
     wbUrl: "https://www.wildberries.ru/catalog/304738901/detail.aspx",
     slug: "",
     images: [
@@ -179,8 +179,8 @@ const goodsList = [
     name: "Биокомплекс для желудка",
     description: "",
     list: [],
-    price: 4990,
-    discount: 51, // в процентах
+    price: 2500,
+    discount: 0, // в процентах
     wbUrl: "https://www.wildberries.ru/catalog/302473681/detail.aspx",
     slug: "",
     images: [
@@ -190,6 +190,22 @@ const goodsList = [
       "/images/goods/g4.webp",
       "/images/goods/g5.webp",
       "/images/goods/g6.webp",
+    ],
+  },
+  {
+    id: 12,
+    name: "Асцидия",
+    description: "",
+    list: [],
+    price: 2500,
+    discount: 0, // в процентах
+    wbUrl: "",
+    slug: "",
+    images: [
+      "/images/goods/a1.webp",
+      "/images/goods/a2.webp",
+      "/images/goods/a3.webp",
+      "/images/goods/a4.webp",
     ],
   },
 ];
