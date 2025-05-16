@@ -117,6 +117,81 @@ const goodsList = [
       "/images/goods/dp7-4.webp",
     ],
   },
+  {
+    id: 8,
+    name: "Медвежья желчь",
+    description: "",
+    list: [],
+    price: 5999,
+    discount: 55, // в процентах
+    wbUrl: "https://www.wildberries.ru/catalog/292690610/detail.aspx",
+    slug: "",
+    images: [
+      "/images/goods/j1.webp",
+      "/images/goods/j2.webp",
+      "/images/goods/j3.webp",
+      "/images/goods/j4.webp",
+      "/images/goods/j5.webp",
+      "/images/goods/j6.webp",
+      "/images/goods/j7.webp",
+      "/images/goods/j8.webp",
+    ],
+  },
+  {
+    id: 9,
+    name: "Ламинария",
+    description: "",
+    list: [],
+    price: 1499,
+    discount: 63, // в процентах
+    wbUrl: "https://www.wildberries.ru/catalog/296801682/detail.aspx",
+    slug: "",
+    images: [
+      "/images/goods/l1.webp",
+      "/images/goods/l2.webp",
+      "/images/goods/l3.webp",
+      "/images/goods/l4.webp",
+      "/images/goods/l5.webp",
+      "/images/goods/l6.webp",
+      "/images/goods/l7.webp",
+    ],
+  },
+  {
+    id: 10,
+    name: "Восстановление печени",
+    description: "",
+    list: [],
+    price: 4990,
+    discount: 51, // в процентах
+    wbUrl: "https://www.wildberries.ru/catalog/304738901/detail.aspx",
+    slug: "",
+    images: [
+      "/images/goods/p1.webp",
+      "/images/goods/p2.webp",
+      "/images/goods/p3.webp",
+      "/images/goods/p4.webp",
+      "/images/goods/p5.webp",
+      "/images/goods/p6.webp",
+    ],
+  },
+  {
+    id: 11,
+    name: "Биокомплекс для желудка",
+    description: "",
+    list: [],
+    price: 4990,
+    discount: 51, // в процентах
+    wbUrl: "https://www.wildberries.ru/catalog/302473681/detail.aspx",
+    slug: "",
+    images: [
+      "/images/goods/g1.webp",
+      "/images/goods/g2.webp",
+      "/images/goods/g3.webp",
+      "/images/goods/g4.webp",
+      "/images/goods/g5.webp",
+      "/images/goods/g6.webp",
+    ],
+  },
 ];
 
 export const useGoodsData = (slug?: string) => {
